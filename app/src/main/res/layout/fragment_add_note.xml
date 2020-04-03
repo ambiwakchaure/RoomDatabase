@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="notesViewModel"
+            type="com.example.roomdatabase.ui.fragments.NotesViewModel" />
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="20pt"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="Title"
+                android:text="@={notesViewModel.title}"
+                android:imeOptions="actionNext"></EditText>
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5pt"
+                android:hint="Note"
+                android:text="@={notesViewModel.note}"
+                android:imeOptions="actionDone"></EditText>
+
+        </LinearLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="10pt"
+            android:layout_marginBottom="10pt"
+            android:clickable="true"
+            android:onClick="@{notesViewModel::onSubmitNoteBtnClicked}"
+            android:src="@drawable/ic_add_black_24dp"
+            android:tint="#ffffff" />
+    </RelativeLayout>
+</layout>

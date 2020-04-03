@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="note"
+            type="com.example.roomdatabase.db.entities.Note" />
+    </data>
+    <LinearLayout
+        android:id="@+id/note_li"
+        android:layout_width="fill_parent"
+        android:orientation="vertical"
+        android:layout_marginRight="2pt"
+        android:layout_marginLeft="2pt"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            tools:text="Title"
+            android:layout_marginTop="3pt"
+            android:text="@{note.title}">
+
+        </TextView>
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            tools:text="Desription"
+            android:layout_marginTop="3pt"
+            android:text="@{note.note}">
+
+        </TextView>
+        <Button
+            android:id="@+id/delete_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete"
+            android:textAllCaps="false"
+            android:layout_gravity="end"
+            android:layout_marginRight="4pt"
+            android:layout_marginTop="3pt">
+
+        </Button>
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2pt">
+
+        </View>
+    </LinearLayout>
+</layout>

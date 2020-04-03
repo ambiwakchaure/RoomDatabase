@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="notesViewModel"
+            type="com.example.roomdatabase.ui.fragments.NotesViewModel" />
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragments.home.HomeFragment">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/notes_rv"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            tools:listitem="@layout/notes_info_item"
+            android:orientation="vertical">
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="10pt"
+            android:layout_marginBottom="10pt"
+            android:clickable="true"
+            android:onClick="@{notesViewModel::onAddNoteBtnClicked}"
+            android:src="@drawable/ic_add_black_24dp"
+            android:tint="#ffffff" />
+    </RelativeLayout>
+</layout>
